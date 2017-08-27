@@ -34,9 +34,63 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordfailure)
 }
 
+const onCreatePost = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.changePassword(data)
+    .then(ui.createPostSuccess)
+    .catch(ui.createPostfailure)
+}
+
+const onGetPost = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.changePassword(data)
+    .then(ui.getPostSuccess)
+    .catch(ui.getPostfailure)
+}
+
+const onUpdatePost = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.changePassword(data)
+    .then(ui.updatePostSuccess)
+    .catch(ui.updatePostfailure)
+}
+
+const onDeletePost = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.changePassword(data)
+    .then(ui.deletePostSuccess)
+    .catch(ui.deletePostfailure)
+}
+
+const onCreateComment = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.changePassword(data)
+    .then(ui.createCommentSuccess)
+    .catch(ui.createCommentfailure)
+}
+
+const onGetComment = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.changePassword(data)
+    .then(ui.getCommentSuccess)
+    .catch(ui.getCommentfailure)
+}
+
 module.exports = {
   onSignIn,
   onSignUp,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreatePost,
+  onGetPost,
+  onUpdatePost,
+  onDeletePost,
+  onCreateComment,
+  onGetComment
 }

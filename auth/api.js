@@ -61,18 +61,18 @@ const signOut = (data) => {
 const createPost = (data) => {
   console.log(data)
   return $.ajax({
-    url: app.host + '/posts/' + app.post.id,
+    url: app.host + '/posts/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
     data: {
-  "post": {
-    "user_id": data.user_id,
-    "title": data.title,
-    "content": data.content
-  }
-}
+      'post': {
+        'user_id': data.user_id,
+        'title': data.title,
+        'content': data.content
+      }
+    }
   })
 }
 
@@ -85,12 +85,79 @@ const getPost = (data) => {
       Authorization: 'Token token=' + app.user.token
     },
     data: {
-  "post": {
-    "user_id": data.user_id,
-    "title": data.title,
-    "content": data.content
-  }
+      'post': {
+        'user_id': data.user_id,
+        'title': data.title,
+        'content': data.content
+      }
+    }
+  })
 }
+
+const updatePost = (data) => {
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/posts/' + app.post.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'post': {
+        'user_id': data.user_id,
+        'title': data.title,
+        'content': data.content
+      }
+    }
+  })
+}
+
+const deletePost = (data) => {
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/posts/' + app.post.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const createComment = (data) => {
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/comments/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'post': {
+        'user_id': data.user_id,
+        'post_id': data.post.id,
+        'title': data.title,
+        'content': data.content
+      }
+    }
+  })
+}
+
+const getComment = (data) => {
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/comments/' + app.comment.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'post': {
+        'user_id': data.user_id,
+        'post_id': data.post.id,
+        'title': data.title,
+        'content': data.content
+      }
+    }
   })
 }
 
@@ -100,5 +167,9 @@ module.exports = {
   changePassword,
   signOut,
   createPost,
-
+  getPost,
+  updatePost,
+  deletePost,
+  createComment,
+  getComment
 }
