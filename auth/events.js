@@ -2,6 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+// events //
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
@@ -11,6 +12,7 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
+  console.log('I did something in onSignIn!')
   const data = getFormFields(this)
   event.preventDefault()
   api.signIn(data)

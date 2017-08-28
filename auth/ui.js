@@ -1,10 +1,9 @@
 'use strict'
 const app = require('../../../app.js')
 
-// const gameplay = require('../clickHandler.js')
-
 const signUpSuccess = (data) => {
   console.log(data)
+  console.log('I did something!')
 }
 
 const signUpFailure = (error) => {

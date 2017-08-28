@@ -1,64 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>My Development Blog!</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="assets/styles/index.css" rel="stylesheet">
+  <title>My Development Blog!</title>
 
-  </head>
+  <link href="assets/styles/index.css" rel="stylesheet">
 
-  <body>
+</head>
 
-    <div class="blog-header">
-      <div class="container">
-        <h1 class="blog-title">Welcome to My Development Blog!</h1>
-        <p class="lead blog-description">A blog about all things code</p>
-      </div>
-    </div>
+<body>
 
+  <div class="blog-header">
     <div class="container">
+      <h1 class="blog-title">Welcome to My Development Blog!</h1>
+      <p class="lead blog-description">A blog about all things code</p>
+    </div>
+  </div>
 
-      <div class="row">
+  <div class="container">
 
-        <div class="col-sm-8 blog-main">
+    <div class="row">
 
-          <div class="blog-post">
-            <h2 class="blog-post-title">Placeholder Post</h2>
+      <div class="col-sm-8 blog-main">
 
-            <p>Here is some basic content for my placeholder post. Just to see how it formats</p>
-            <ul>
-              <li>I can list things</li>
-              <li>Things</li>
-              <li>Things</li>
-            </ul>
-            <p>There are some interesting things to test out.</p>
-          </div><!-- /.blog-post -->
+        <div>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign Up Below</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Create Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" name="submit" value="Sign Up!">
+            </fieldset>
+          </form>
+        </div>
 
-        </div><!-- /.blog-main -->
+        <div>
+          <form id="sign-in">
+            <fieldset>
+              <legend>Login Below</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" name="submit" value="Sign In!">
+            </fieldset>
+          </form>
+        </div>
 
-        <div class="col-sm-3 offset-sm-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>This blog chronicles my time in General Assembly and all that I've learned while going through this program. It is also a space to post interesting new things I learn about development and code!</p>
-          </div>
+        <div>
+          <form class="sign-out" id="signOut">
+            <button id="sign-out" type="submit" disabled> Sign Out </button>
+          </form>
+        </div>
 
-          <div class="sidebar-module1">
-            <h4>Where to Find Me</h4>
-            <ol class="list-unstyled">
-              <li><a href="https://github.com/Hadleyana" target="_blank">GitHub</a></li>
-              <li><a href="https://hadleyana.github.io/my-portfolio/" target="_blank">My Portfolio</a></li>
-              <li><a href="https://www.linkedin.com/in/hadleysweck/" target="_blank">Linkedin</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
+        <div class="blog-post">
+          <h2 class="blog-post-title">Placeholder Post</h2>
 
-      </div><!-- /.row -->
+          <p>Here is some basic content for my placeholder post. Just to see how it formats</p>
+          <ul>
+            <li>I can list things</li>
+            <li>Things</li>
+            <li>Things</li>
+          </ul>
+          <p>There are some interesting things to test out.</p>
+        </div>
+        <!-- /.blog-post -->
 
-    </div><!-- /.container -->
+      </div>
+      <!-- /.blog-main -->
 
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    </footer>
+      <div class="col-sm-3 offset-sm-1 blog-sidebar">
+        <div class="sidebar-module sidebar-module-inset">
+          <h4>About</h4>
+          <p>This blog chronicles my time in General Assembly and all that I've learned while going through this program. It is also a space to post interesting new things I learn about development and code!</p>
+        </div>
+
+        <div class="sidebar-module1">
+          <h4>Where to Find Me</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/Hadleyana" target="_blank">GitHub</a></li>
+            <li><a href="https://hadleyana.github.io/my-portfolio/" target="_blank">Portfolio</a></li>
+            <li><a href="https://www.linkedin.com/in/hadleysweck/" target="_blank">Linkedin</a></li>
+          </ol>
+        </div>
+      </div>
+      <!-- /.blog-sidebar -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <footer class="blog-footer">
+    <p>Blog template built for <a href="https://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  </footer>

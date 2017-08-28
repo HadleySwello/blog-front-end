@@ -1,5 +1,6 @@
 'use strict'
 const app = require('app.js')
+
 // const config = require('../config')
 
 const signUp = (data) => {
