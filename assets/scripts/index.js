@@ -22,4 +22,11 @@ $(() => {
   $('#signOut').on('submit', events.onSignOut)
   $('#new-post').on('submit', events.onCreatePost)
   $('#get-posts').on('click', events.onGetPost)
+  $('#commentButton').on('click', events.onCreateComment)
 })
+
+$(document).on('click', '#commentButton', function () {
+  events.onCreateComment()
+})
+
+$(document).on('click', '.delete-post', events.onDeletePost)

@@ -1,6 +1,6 @@
 'use strict'
 const app = require('./app.js')
-const events = require('./events.js')
+// const events = require('./events.js')
 
 const signUpSuccess = (data) => {
   console.log(data)
@@ -55,20 +55,32 @@ const getPostSuccess = (data) => {
   console.log('Succeded')
   console.log(data.posts.length)
   $('#posts').empty()
-  const posts = [0, 1, 2, 3]
-  for (let i = 0; i < posts.length; i++) {
-    console.log(posts.length)
-    console.log(data.posts[i].title)
+  for (let i = 0; i < data.posts.length; i++) {
     $('#posts').append(
       '<tr class="title">' +
-      '<th>' + data.posts[i].title + '</th>' +
+        '<th>' + data.posts[i].title + '</th>' +
       '</tr>' +
       '<tr class="content">' +
-      '<td>' + data.posts[i].content + '</td>' +
+      '<td> <textbox>' + data.posts[i].content + '</textbox> </td>' +
+      '<td>' + '<button class="delete-post" data-id="' + data.posts[i].id + '" type="button">' + 'Delete Post' + '</button>' + '</td>' +
+      '</tr>' +
+      '<tr class="comment-button">' +
+      '<td>' +
+      '<input type="text" name="title" form="comment-form" placeholder="Title" />' +
+      '<input type="text" name="comment" form="comment-form" placeholder="Comment" />' +
+      '<tr class="submit-comment">' +
+      '<td>' +
+      '<button type="button" form="comment-form" id="commentButton">' + 'Comments?' + '</button>' +
+      '</td>' +
+      '</tr>' +
+      '<tr hidden>' +
+      '<td id="postId">' + data.posts[i].id +
+      '</td>' +
+      '</tr>' +
+      '</td>' +
       '</tr>'
     )
   }
-  // $('#getPosts').click(events.loopPosts(data))
 }
 
 const getPostFailure = (error) => {
@@ -87,6 +99,7 @@ const updatePostFailure = (error) => {
 }
 
 const deletePostSuccess = (data) => {
+  console.log(data.post.id)
   console.log(data)
   console.log('Succeded')
 }
@@ -97,7 +110,7 @@ const deletePostFailure = (error) => {
 }
 
 const createCommentSuccess = (data) => {
-  // app.user = data.user
+  app.data = data.comment
   console.log(data)
   console.log('Succeded')
 }

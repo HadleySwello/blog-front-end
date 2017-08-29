@@ -107,11 +107,11 @@ const updatePost = (data) => {
   })
 }
 
-const deletePost = (data) => {
-  console.log(data)
+const deletePost = (deletePostId) => {
+  console.log(deletePostId)
   return $.ajax({
-    url: app.host + '/posts/' + app.post.id,
-    method: 'PATCH',
+    url: app.host + '/posts/' + deletePostId,
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
     }
@@ -120,6 +120,7 @@ const deletePost = (data) => {
 
 const createComment = (data) => {
   console.log(data)
+  console.log(app.user)
   return $.ajax({
     url: app.host + '/comments/',
     method: 'POST',
@@ -127,9 +128,9 @@ const createComment = (data) => {
       Authorization: 'Token token=' + app.user.token
     },
     data: {
-      'post': {
-        'user_id': data.user_id,
-        'post_id': data.post.id,
+      'comment': {
+        'user_id': app.user.id,
+        'post_id': app.post.id,
         'title': data.title,
         'content': data.content
       }

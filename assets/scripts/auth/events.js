@@ -65,16 +65,14 @@ const onUpdatePost = function (event) {
 }
 
 const onDeletePost = function (event) {
-  const data = getFormFields(this)
-  event.preventDefault()
-  api.deletePost(data)
+  console.log(event.target.dataset.id)
+  api.deletePost(event.target.dataset.id)
     .then(ui.deletePostSuccess)
     .catch(ui.deletePostfailure)
 }
 
-const onCreateComment = function (event) {
+const onCreateComment = function () {
   const data = getFormFields(this)
-  event.preventDefault()
   api.createComment(data)
     .then(ui.createCommentSuccess)
     .catch(ui.createCommentfailure)
