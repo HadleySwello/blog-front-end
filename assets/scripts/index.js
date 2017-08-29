@@ -12,7 +12,7 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const events = require('../auth/events.js')
+const events = require('./auth/events.js')
 // event handlers //
 
 $(() => {
@@ -20,4 +20,6 @@ $(() => {
   $('#sign-in').on('submit', events.onSignIn)
   $('#change-password').on('submit', events.onChangePassword)
   $('#signOut').on('submit', events.onSignOut)
+  $('#new-post').on('submit', events.onCreatePost)
+  $('#get-posts').on('click', events.onGetPost)
 })

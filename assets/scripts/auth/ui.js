@@ -1,9 +1,10 @@
 'use strict'
-const app = require('../../../app.js')
+const app = require('./app.js')
+const events = require('./events.js')
 
 const signUpSuccess = (data) => {
   console.log(data)
-  console.log('I did something!')
+  console.log('I did something in ui.js!')
 }
 
 const signUpFailure = (error) => {
@@ -39,6 +40,7 @@ const logOutFailure = (error) => {
 }
 
 const createPostSuccess = (data) => {
+  app.data = data.post
   console.log(data)
   console.log('Succeded')
 }
@@ -51,6 +53,22 @@ const createPostFailure = (error) => {
 const getPostSuccess = (data) => {
   console.log(data)
   console.log('Succeded')
+  console.log(data.posts.length)
+  $('#posts').empty()
+  const posts = [0, 1, 2, 3]
+  for (let i = 0; i < posts.length; i++) {
+    console.log(posts.length)
+    console.log(data.posts[i].title)
+    $('#posts').append(
+      '<tr class="title">' +
+      '<th>' + data.posts[i].title + '</th>' +
+      '</tr>' +
+      '<tr class="content">' +
+      '<td>' + data.posts[i].content + '</td>' +
+      '</tr>'
+    )
+  }
+  // $('#getPosts').click(events.loopPosts(data))
 }
 
 const getPostFailure = (error) => {
@@ -79,6 +97,7 @@ const deletePostFailure = (error) => {
 }
 
 const createCommentSuccess = (data) => {
+  // app.user = data.user
   console.log(data)
   console.log('Succeded')
 }

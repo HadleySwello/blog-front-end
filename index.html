@@ -7,8 +7,9 @@
 
   <title>My Development Blog!</title>
 
-  <link href="assets/styles/index.css" rel="stylesheet">
-
+  <!-- <link href="assets/styles/index.css" rel="stylesheet"> -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body>
@@ -55,28 +56,41 @@
           </form>
         </div>
 
-        <div class="blog-post">
-          <h2 class="blog-post-title">Placeholder Post</h2>
+        <div>
+          <form id="new-post">
+            <fieldset>
+              <legend>Create New Post Below</legend>
+              <input type="text" name="title" placeholder="Title">
+              <textarea name="content" id="content" cols="25" rows="3" placeholder="content"></textarea>
+              <input type="submit" name="submit" value="Post!">
+            </fieldset>
+          </form>
+        </div>
 
-          <p>Here is some basic content for my placeholder post. Just to see how it formats</p>
-          <ul>
-            <li>I can list things</li>
-            <li>Things</li>
-            <li>Things</li>
-          </ul>
-          <p>There are some interesting things to test out.</p>
+        <div class="blog-post">
+          <table id="posts">
+            <tr>
+              <th>Placeholder Post</th>
+            </tr>
+            <tr>
+              <td> Basic content</td>
+            </tr>
+          </table>
         </div>
         <!-- /.blog-post -->
 
       </div>
+      <!---Don't delete me! I close the column-->
       <!-- /.blog-main -->
 
       <div class="col-sm-3 offset-sm-1 blog-sidebar">
-        <div class="sidebar-module sidebar-module-inset">
+        <div class="sidebar-module sidebar-module-inset" style="page-break-after: always;">
           <h4>About</h4>
           <p>This blog chronicles my time in General Assembly and all that I've learned while going through this program. It is also a space to post interesting new things I learn about development and code!</p>
         </div>
-
+        <div class="sidebar-module1">
+          <button type="button" id="get-posts" class="btn btn-default" style="page-break-after: always;">Get Posts!</button>
+        </div>
         <div class="sidebar-module1">
           <h4>Where to Find Me</h4>
           <ol class="list-unstyled">

@@ -1,5 +1,5 @@
 'use strict'
-const app = require('app.js')
+const app = require('./app.js')
 
 // const config = require('../config')
 
@@ -61,6 +61,7 @@ const signOut = (data) => {
 
 const createPost = (data) => {
   console.log(data)
+  console.log(app.user)
   return $.ajax({
     url: app.host + '/posts/',
     method: 'POST',
@@ -69,7 +70,7 @@ const createPost = (data) => {
     },
     data: {
       'post': {
-        'user_id': data.user_id,
+        'user_id': app.user.id,
         'title': data.title,
         'content': data.content
       }
@@ -80,17 +81,10 @@ const createPost = (data) => {
 const getPost = (data) => {
   console.log(data)
   return $.ajax({
-    url: app.host + '/posts/' + app.post.id,
+    url: app.host + '/posts/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
-    },
-    data: {
-      'post': {
-        'user_id': data.user_id,
-        'title': data.title,
-        'content': data.content
-      }
     }
   })
 }

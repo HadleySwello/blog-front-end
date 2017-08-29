@@ -1,8 +1,12 @@
+// required files //
+
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
+// page funtionality //
 
 // events //
+
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
@@ -39,7 +43,7 @@ const onChangePassword = function (event) {
 const onCreatePost = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  api.changePassword(data)
+  api.createPost(data)
     .then(ui.createPostSuccess)
     .catch(ui.createPostfailure)
 }
@@ -47,7 +51,7 @@ const onCreatePost = function (event) {
 const onGetPost = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  api.changePassword(data)
+  api.getPost(data)
     .then(ui.getPostSuccess)
     .catch(ui.getPostfailure)
 }
@@ -55,7 +59,7 @@ const onGetPost = function (event) {
 const onUpdatePost = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  api.changePassword(data)
+  api.updatePost(data)
     .then(ui.updatePostSuccess)
     .catch(ui.updatePostfailure)
 }
@@ -63,7 +67,7 @@ const onUpdatePost = function (event) {
 const onDeletePost = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  api.changePassword(data)
+  api.deletePost(data)
     .then(ui.deletePostSuccess)
     .catch(ui.deletePostfailure)
 }
@@ -71,7 +75,7 @@ const onDeletePost = function (event) {
 const onCreateComment = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  api.changePassword(data)
+  api.createComment(data)
     .then(ui.createCommentSuccess)
     .catch(ui.createCommentfailure)
 }
@@ -79,7 +83,7 @@ const onCreateComment = function (event) {
 const onGetComment = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  api.changePassword(data)
+  api.getComment(data)
     .then(ui.getCommentSuccess)
     .catch(ui.getCommentfailure)
 }
