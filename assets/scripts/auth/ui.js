@@ -61,7 +61,7 @@ const getPostSuccess = (data) => {
         '<th>' + data.posts[i].title + '</th>' +
       '</tr>' +
       '<tr class="content">' +
-      '<td> <textbox>' + data.posts[i].content + '</textbox> </td>' +
+      '<td> <textarea>' + data.posts[i].content + '</textarea> </td>' +
       '<td>' + '<button class="delete-post" data-id="' + data.posts[i].id + '" type="button">' + 'Delete Post' + '</button>' + '</td>' +
       '</tr>' +
       '<tr class="comment-button">' +
