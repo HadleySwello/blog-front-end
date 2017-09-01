@@ -23,6 +23,16 @@ $(() => {
   $('#new-post').on('submit', events.onCreatePost)
   $('#get-posts').on('click', events.onGetPost)
   $('#commentButton').on('click', events.onCreateComment)
+  $('#updatePost').on('submit', events.onUpdatePost)
+  $('#show-sign-in').click(function () {
+    $('#sign-in').show(1000)
+  })
+  $('#sign-out').click(function () {
+    $('#sign-in').show(1000)
+  })
+  $('#sign-in-button').click(function () {
+    $('#sign-in').hide(1000)
+  })
 })
 
 $(document).on('click', '#commentButton', function () {

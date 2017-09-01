@@ -57,11 +57,15 @@ const getPostSuccess = (data) => {
   $('#posts').empty()
   for (let i = 0; i < data.posts.length; i++) {
     $('#posts').append(
+      '<tr>' +
+      '<td id="postId">' + data.posts[i].id + '</td>' +
+      '<tr class="break">' +
+      '</tr>' +
       '<tr class="title">' +
         '<th>' + data.posts[i].title + '</th>' +
       '</tr>' +
       '<tr class="content">' +
-      '<td> <textarea>' + data.posts[i].content + '</textarea> </td>' +
+      '<td>' + data.posts[i].content + '</td>' +
       '<td>' + '<button class="delete-post" data-id="' + data.posts[i].id + '" type="button">' + 'Delete Post' + '</button>' + '</td>' +
       '</tr>' +
       '<tr class="comment-button">' +
@@ -73,9 +77,6 @@ const getPostSuccess = (data) => {
       '<button type="button" form="comment-form" id="commentButton">' + 'Comments?' + '</button>' +
       '</td>' +
       '</tr>' +
-      '<tr hidden>' +
-      '<td id="postId">' + data.posts[i].id +
-      '</td>' +
       '</tr>' +
       '</td>' +
       '</tr>'

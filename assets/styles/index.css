@@ -16,9 +16,25 @@
  }
 
  body {
-   font-family: Georgia, "Times New Roman", Times, serif;
    color: #555;
+   font-family: Georgia, "Times New Roman", Times, serif
  }
+
+#posts {
+  border-color: #273B09;
+  border-style: ridge
+}
+
+#new-post {
+  border-color: #273B09;
+  border-style: ridge
+}
+
+.btn-default {
+  background-color: #58641D;
+  border-color: #002400;
+  color: #4C2719
+}
 
  h1, .h1,
  h2, .h2,
@@ -26,9 +42,9 @@
  h4, .h4,
  h5, .h5,
  h6, .h6 {
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-weight: normal;
    color: #333;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight: normal
  }
 
 
@@ -46,8 +62,8 @@
   */
 
  .blog-masthead {
-   margin-bottom: 3rem;
    background-color: #428bca;
+   margin-bottom: 3rem;
    -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
            box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
  }

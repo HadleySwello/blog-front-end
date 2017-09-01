@@ -34,9 +34,10 @@
               <input type="text" name="credentials[email]" placeholder="Email">
               <input type="password" name="credentials[password]" placeholder="Create Password">
               <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-              <input type="submit" name="submit" value="Sign Up!">
+              <input type="submit" class="btn-default" name="submit" value="Sign Up!">
             </fieldset>
           </form>
+          <button id="show-sign-in" class="btn btn-default"> I Already Have an Account </button>
         </div>
 
         <div>
@@ -45,14 +46,14 @@
               <legend>Login Below</legend>
               <input type="text" name="credentials[email]" placeholder="Email">
               <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="submit" name="submit" value="Sign In!">
+              <input type="submit" id="sign-in-button" class="btn-default" name="submit" value="Sign In!">
             </fieldset>
           </form>
         </div>
 
         <div>
           <form class="sign-out" id="signOut">
-            <button id="sign-out" type="submit" disabled> Sign Out </button>
+            <button id="sign-out" type="submit" class="btn-default" disabled> Sign Out </button>
           </form>
         </div>
 
@@ -61,8 +62,8 @@
             <fieldset>
               <legend>Create New Post Below</legend>
               <input type="text" name="title" placeholder="Title">
-              <textarea name="content" id="content" cols="25" rows="3" placeholder="content"></textarea>
-              <input type="submit" name="submit" value="Post!">
+              <textarea name="content" id="content" cols="25" rows="3" placeholder="Content"></textarea>
+              <input type="submit" name="submit" class="btn-default" value="Post!">
             </fieldset>
           </form>
         </div>
@@ -70,12 +71,21 @@
         <div class="blog-post">
           <table id="posts">
             <tr>
-              <th>Placeholder Post</th>
+              <th></th>
             </tr>
             <tr>
-              <td> Basic content</td>
+              <td></td>
             </tr>
           </table>
+          <form id="updatePost">
+            <fieldset>
+              <legend>Update Post Below</legend>
+              <input type="number" name="id" placeholder="id">
+              <input type="text" name="title" placeholder="Title">
+              <textarea name="content" cols="25" rows="3" placeholder=" New Content"></textarea>
+              <input type="submit" name="submit" class="btn-default" value="Post!">
+            </fieldset>
+          </form>
         </div>
         <!-- /.blog-post -->
 

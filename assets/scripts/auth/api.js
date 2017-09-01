@@ -91,15 +91,16 @@ const getPost = (data) => {
 
 const updatePost = (data) => {
   console.log(data)
+  console.log(app.user.id, data.title, data.content)
   return $.ajax({
-    url: app.host + '/posts/' + app.post.id,
+    url: app.host + '/posts/' + data.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
     data: {
       'post': {
-        'user_id': data.user_id,
+        'user_id': app.user.id,
         'title': data.title,
         'content': data.content
       }
