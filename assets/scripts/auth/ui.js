@@ -11,9 +11,22 @@ const signUpFailure = (error) => {
   console.log(error)
 }
 
+const log = function () {
+  console.log('hiding!')
+}
+
 const signInSuccess = (data) => {
   $('#sign-out').prop('disabled', false)
   app.user = data.user
+  if (app.user.id !== 1) {
+    $('.rowPostId').hide('fast', log)
+    $('#updatePost').hide('fast', log)
+    $('#new-post').hide('fast', log)
+  } else {
+    $('.rowPostId').show('fast', log)
+    $('#updatePost').show('fast', log)
+    $('#new-post').show('fast', log)
+  }
   console.log(app.user.token)
 }
 
@@ -58,7 +71,7 @@ const getPostSuccess = (data) => {
   for (let i = 0; i < data.posts.length; i++) {
     $('#posts').append(
       '<tr>' +
-      '<td id="postId">' + data.posts[i].id + '</td>' +
+      '<td class="rowPostId">' + data.posts[i].id + '</td>' +
       '<tr class="break">' +
       '</tr>' +
       '<tr class="title">' +
@@ -81,6 +94,11 @@ const getPostSuccess = (data) => {
       '</td>' +
       '</tr>'
     )
+  }
+  if (app.user.id !== 1) {
+    $('.rowPostId').hide('fast', log)
+  } else {
+    $('.rowPostId').show('fast', log)
   }
 }
 

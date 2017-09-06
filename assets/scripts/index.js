@@ -16,6 +16,8 @@ const events = require('./auth/events.js')
 // event handlers //
 
 $(() => {
+  $('#updatePost').hide()
+  $('#new-post').hide()
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
   $('#change-password').on('submit', events.onChangePassword)
@@ -24,14 +26,13 @@ $(() => {
   $('#get-posts').on('click', events.onGetPost)
   $('#commentButton').on('click', events.onCreateComment)
   $('#updatePost').on('submit', events.onUpdatePost)
-  $('#show-sign-in').click(function () {
-    $('#sign-in').show(1000)
-  })
   $('#sign-out').click(function () {
     $('#sign-in').show(1000)
+    $('#sign-up').show(1000)
   })
   $('#sign-in-button').click(function () {
     $('#sign-in').hide(1000)
+    $('#sign-up').hide(1000)
   })
 })
 

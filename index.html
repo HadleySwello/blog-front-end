@@ -37,7 +37,6 @@
               <input type="submit" class="btn-default" name="submit" value="Sign Up!">
             </fieldset>
           </form>
-          <button id="show-sign-in" class="btn btn-default"> I Already Have an Account </button>
         </div>
 
         <div>
@@ -58,7 +57,7 @@
         </div>
 
         <div>
-          <form id="new-post">
+          <form id="new-post" class="hidden">
             <fieldset>
               <legend>Create New Post Below</legend>
               <input type="text" name="title" placeholder="Title">
@@ -77,13 +76,14 @@
               <td></td>
             </tr>
           </table>
-          <form id="updatePost">
+          <!-- same div different forms -->
+          <form id="updatePost" class="hidden">
             <fieldset>
               <legend>Update Post Below</legend>
               <input type="number" name="id" placeholder="id">
               <input type="text" name="title" placeholder="Title">
               <textarea name="content" cols="25" rows="3" placeholder=" New Content"></textarea>
-              <input type="submit" name="submit" class="btn-default" value="Post!">
+              <input type="submit" name="submit" class="btn-default" value="Update!">
             </fieldset>
           </form>
         </div>
