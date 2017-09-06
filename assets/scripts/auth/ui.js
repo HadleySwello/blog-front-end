@@ -97,8 +97,10 @@ const getPostSuccess = (data) => {
   }
   if (app.user.id !== 1) {
     $('.rowPostId').hide('fast', log)
+    $('.delete-post').hide('fast', log)
   } else {
     $('.rowPostId').show('fast', log)
+    $('.delete-post').show('fast', log)
   }
 }
 
