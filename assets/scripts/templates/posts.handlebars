@@ -1,0 +1,31 @@
+<!-- posts template -->
+<div id="post-content" data-id="{{dataId}}">
+  <div class="card">
+
+    <div class="card-body">
+      <h2 class="card-title">{{title}}</h2>
+      <div class="card-block">
+        <p>{{content}}</p>
+        <div id="empty-comments-div">
+        </div>
+        <button type="button" class="postsEditButton" data-id="{{dataId}}" name="editButton">Edit</button>
+        <button type="button" class="postsDeleteButton" data-id="{{dataId}}" name="deleteButton">Delete</button>
+      </div>
+    </div>
+
+    <!-- <div class="card card-default">
+      <h3 class="card-title">Comments</h3>
+      <div id="empty-comments-div">
+      </div>
+      <div id="comment-form">
+        <form class="new-comment-form">
+          <input type="text" name="title" placeholder="Title">
+          <input type="text" name="content" placeholder="Content">
+          <input type="submit" name="submit" class="btn-default" data-id="{{dataId}}" value="Comment!">
+        </form>
+      </div>
+    </div> -->
+
+  </div>
+  <br></br>
+</div>

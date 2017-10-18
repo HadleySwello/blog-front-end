@@ -30,6 +30,22 @@
   border-style: ridge
 }
 
+form.card {
+  background-color: #A4AF69;
+  border-color: #273B09;
+  border-style: ridge;
+  border-width: medium;
+  padding: 5px;
+}
+
+div.card {
+  background-color: #A4AF69;
+  border-color: #273B09;
+  border-style: ridge;
+  border-width: medium;
+  padding: 5px;
+}
+
 .btn-default {
   background-color: #58641D;
   border-color: #002400;

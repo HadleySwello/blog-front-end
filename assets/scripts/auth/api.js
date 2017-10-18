@@ -89,11 +89,11 @@ const getPost = (data) => {
   })
 }
 
-const updatePost = (data) => {
+const updatePost = (data, dataId) => {
   console.log(data)
   console.log(app.user.id, data.title, data.content)
   return $.ajax({
-    url: app.host + '/posts/' + data.id,
+    url: app.host + '/posts/' + dataId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -108,10 +108,9 @@ const updatePost = (data) => {
   })
 }
 
-const deletePost = (deletePostId) => {
-  console.log(deletePostId)
+const deletePost = (dataId) => {
   return $.ajax({
-    url: app.host + '/posts/' + deletePostId,
+    url: app.host + '/posts/' + dataId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -119,44 +118,35 @@ const deletePost = (deletePostId) => {
   })
 }
 
-const createComment = (data) => {
-  console.log(data)
-  console.log(app.user)
-  return $.ajax({
-    url: app.host + '/comments/',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    },
-    data: {
-      'comment': {
-        'user_id': app.user.id,
-        'post_id': app.post.id,
-        'title': data.title,
-        'content': data.content
-      }
-    }
-  })
-}
+// const createComment = (data, postID) => {
+//   console.log(data)
+//   console.log(app.user)
+//   return $.ajax({
+//     url: app.host + '/comments/',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token
+//     },
+//     data: {
+//       'comment': {
+//         'user_id': app.user.id,
+//         'post_id': postID,
+//         'title': data.title,
+//         'content': data.content
+//       }
+//     }
+//   })
+// }
 
-const getComment = (data) => {
-  console.log(data)
-  return $.ajax({
-    url: app.host + '/comments/' + app.comment.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    },
-    data: {
-      'post': {
-        'user_id': data.user_id,
-        'post_id': data.post.id,
-        'title': data.title,
-        'content': data.content
-      }
-    }
-  })
-}
+// const getComment = () => {
+//   return $.ajax({
+//     url: app.host + '/comments/',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token
+//     }
+//   })
+// }
 
 module.exports = {
   signIn,
@@ -166,7 +156,7 @@ module.exports = {
   createPost,
   getPost,
   updatePost,
-  deletePost,
-  createComment,
-  getComment
+  deletePost
+  // createComment,
+  // getComment
 }

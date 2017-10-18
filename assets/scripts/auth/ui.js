@@ -1,5 +1,6 @@
 'use strict'
 const app = require('./app.js')
+const template = require('../handlebars-data')
 // const events = require('./events.js')
 
 const signUpSuccess = (data) => {
@@ -67,33 +68,12 @@ const getPostSuccess = (data) => {
   console.log(data)
   console.log('Succeded')
   console.log(data.posts.length)
-  $('#posts').empty()
+  $('#empty-post-template').empty()
   for (let i = 0; i < data.posts.length; i++) {
-    $('#posts').append(
-      '<tr>' +
-      '<td class="rowPostId">' + data.posts[i].id + '</td>' +
-      '<tr class="break">' +
-      '</tr>' +
-      '<tr class="title">' +
-        '<th>' + data.posts[i].title + '</th>' +
-      '</tr>' +
-      '<tr class="content">' +
-      '<td>' + data.posts[i].content + '</td>' +
-      '<td>' + '<button class="delete-post" data-id="' + data.posts[i].id + '" type="button">' + 'Delete Post' + '</button>' + '</td>' +
-      '</tr>' +
-      '<tr class="comment-button">' +
-      '<td>' +
-      '<input type="text" name="title" form="comment-form" placeholder="Title" />' +
-      '<input type="text" name="comment" form="comment-form" placeholder="Comment" />' +
-      '<tr class="submit-comment">' +
-      '<td>' +
-      '<button type="button" form="comment-form" id="commentButton">' + 'Comments?' + '</button>' +
-      '</td>' +
-      '</tr>' +
-      '</tr>' +
-      '</td>' +
-      '</tr>'
-    )
+    const dataId = data.posts[i].id
+    const title = data.posts[i].title
+    const content = data.posts[i].content
+    template.postsHandlebars(title, content, dataId)
   }
   if (app.user.id !== 1) {
     $('.rowPostId').hide('fast', log)
@@ -130,26 +110,33 @@ const deletePostFailure = (error) => {
   console.log('Failed')
 }
 
-const createCommentSuccess = (data) => {
-  app.data = data.comment
-  console.log(data)
-  console.log('Succeded')
-}
-
-const createCommentFailure = (error) => {
-  console.log(error)
-  console.log('Failed')
-}
-
-const getCommentSuccess = (data) => {
-  console.log(data)
-  console.log('Succeded')
-}
-
-const getCommentFailure = (error) => {
-  console.log(error)
-  console.log('Failed')
-}
+// const createCommentSuccess = (data) => {
+//   app.data = data.comment
+//   console.log(data)
+//   console.log('Succeded')
+// }
+//
+// const createCommentFailure = (error) => {
+//   console.log(error)
+//   console.log('Failed')
+// }
+//
+// const getCommentSuccess = (data) => {
+//   console.log(data)
+//   console.log('Succeded')
+//   $('#empty-comments-div').empty()
+//   for (let i = 0; i < data.comments.length; i++) {
+//     const dataId = data.comments[i].id
+//     const title = data.comments[i].title
+//     const content = data.comments[i].content
+//     template.postsHandlebars(title, content, dataId)
+//   }
+// }
+//
+// const getCommentFailure = (error) => {
+//   console.log(error)
+//   console.log('Failed')
+// }
 
 module.exports = {
   signUpFailure,
@@ -167,9 +154,9 @@ module.exports = {
   updatePostSuccess,
   updatePostFailure,
   deletePostSuccess,
-  deletePostFailure,
-  createCommentSuccess,
-  createCommentFailure,
-  getCommentSuccess,
-  getCommentFailure
+  deletePostFailure
+  // createCommentSuccess,
+  // createCommentFailure,
+  // getCommentSuccess,
+  // getCommentFailure
 }

@@ -48,43 +48,74 @@ const onCreatePost = function (event) {
     .catch(ui.createPostfailure)
 }
 
+// const onCreateComment = function () {
+//   event.preventDefault()
+//   const data = getFormFields(this)
+//   const postID = $('#post-content').attr('data-id')
+//   api.createComment(data, postID)
+//     .then(ui.createCommentSuccess)
+//     .catch(ui.createCommentfailure)
+// }
+
 const onGetPost = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   api.getPost(data)
     .then(ui.getPostSuccess)
+    // .then(onGetComment)
     .catch(ui.getPostfailure)
 }
 
+// const onGetComment = function (event) {
+//   // event.preventDefault()
+//   api.getComment()
+//     .then(ui.getCommentSuccess)
+//     .catch(ui.getCommentfailure)
+// }
+
 const onUpdatePost = function (event) {
   const data = getFormFields(this)
+  const dataId = this.getAttribute('data-id')
+  console.log('onUpdatePost dataId = ' + dataId)
   event.preventDefault()
-  api.updatePost(data)
+  api.updatePost(data, dataId)
     .then(ui.updatePostSuccess)
     .catch(ui.updatePostfailure)
 }
 
 const onDeletePost = function (event) {
-  console.log(event.target.dataset.id)
-  api.deletePost(event.target.dataset.id)
+  const dataId = this.getAttribute('data-id')
+  console.log(dataId)
+  api.deletePost(dataId)
     .then(ui.deletePostSuccess)
     .catch(ui.deletePostfailure)
 }
 
-const onCreateComment = function () {
-  const data = getFormFields(this)
-  api.createComment(data)
-    .then(ui.createCommentSuccess)
-    .catch(ui.createCommentfailure)
+// const onDeleteComment = function (event) {
+//   const dataId = this.getAttribute('data-id')
+//   console.log(dataId)
+//   api.deletePost(dataId)
+//     .then(ui.deletePostSuccess)
+//     .catch(ui.deletePostfailure)
+// }
+
+const onUpdatePostSaveId = function (event) {
+  const dataId = this.getAttribute('data-id')
+  console.log('onUpdatePostSaveId = ' + dataId)
+  event.preventDefault()
+  $('#updatePost').attr({
+    'data-id': dataId
+  })
 }
 
-const onGetComment = function (event) {
-  const data = getFormFields(this)
-  event.preventDefault()
-  api.getComment(data)
-    .then(ui.getCommentSuccess)
-    .catch(ui.getCommentfailure)
-}
+// const onSaveIdForComment = function (event) {
+//   const dataId = this.getAttribute('data-id')
+//   console.log('onSaveIdForComment = ' + dataId)
+//   event.preventDefault()
+//   $('#updatePost').attr({
+//     'data-id': dataId
+//   })
+// }
 
 module.exports = {
   onSignIn,
@@ -95,6 +126,9 @@ module.exports = {
   onGetPost,
   onUpdatePost,
   onDeletePost,
-  onCreateComment,
-  onGetComment
+  // onCreateComment,
+  // onGetComment,
+  onUpdatePostSaveId
+  // onDeleteComment,
+  // onSaveIdForComment
 }
