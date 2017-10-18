@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>My Development Blog!</title>
+
+  <!-- <link href="assets/styles/index.css" rel="stylesheet"> -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <div class="blog-header">
+    <div class="container">
+      <h1 class="blog-title">Welcome to My Development Blog!</h1>
+      <p class="lead blog-description">A blog about all things code</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-sm-8 blog-main">
+
+        <div>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign Up Below</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Create Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" class="btn-default" name="submit" value="Sign Up!">
+            </fieldset>
+          </form>
+        </div>
+
+        <div>
+          <form id="sign-in">
+            <fieldset>
+              <legend>Login Below</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" id="sign-in-button" class="btn-default" name="submit" value="Sign In!">
+            </fieldset>
+          </form>
+        </div>
+
+        <br></br>
+
+        <div>
+          <form class="sign-out" id="signOut">
+            <button id="sign-out" type="submit" class="btn-default" disabled> Sign Out </button>
+          </form>
+        </div>
+
+        <br></br>
+
+        <div>
+          <form id="new-post" class="hidden card card-default">
+            <fieldset>
+              <legend>Create New Post Below</legend>
+              <input type="text" name="title" placeholder="Title">
+              <textarea name="content" id="content" cols="25" rows="3" placeholder="Content"></textarea>
+              <input type="submit" name="submit" class="btn-default" value="Post!">
+            </fieldset>
+          </form>
+        </div>
+
+        <br></br>
+
+        <div class="blog-post">
+          <div id="empty-post-template">
+          </div>
+          <!-- same div different forms -->
+          <form id="updatePost" class="hidden card card-default">
+            <fieldset>
+              <legend>Update Post Below</legend>
+              <input type="text" name="title" placeholder="Title">
+              <textarea name="content" cols="25" rows="3" placeholder=" New Content"></textarea>
+              <input type="submit" name="submit" class="btn-default" value="Update!">
+            </fieldset>
+          </form>
+        </div>
+        <!-- /.blog-post -->
+
+      </div>
+      <!---Don't delete me! I close the column-->
+      <!-- /.blog-main -->
+
+      <div class="col-sm-3 offset-sm-1 blog-sidebar">
+        <div class="sidebar-module sidebar-module-inset" style="page-break-after: always;">
+          <h4>About</h4>
+          <p>This blog chronicles my time in General Assembly and all that I've learned while going through this program. It is also a space to post interesting new things I learn about development and code!</p>
+        </div>
+        <div class="sidebar-module1">
+
+                  <br></br>
+
+          <button type="button" id="get-posts" class="btn btn-default" style="page-break-after: always;">Get Posts!</button>
+
+                  <br></br>
+
+        </div>
+        <div class="sidebar-module1">
+          <h4>Where to Find Me</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/Hadleyana" target="_blank">GitHub</a></li>
+            <li><a href="https://hadleyana.github.io/my-portfolio/" target="_blank">Portfolio</a></li>
+            <li><a href="https://www.linkedin.com/in/hadleysweck/" target="_blank">Linkedin</a></li>
+          </ol>
+        </div>
+      </div>
+      <!-- /.blog-sidebar -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <footer class="blog-footer">
+    <p>Blog template built for <a href="https://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  </footer>
+</html>
